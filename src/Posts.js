@@ -45,7 +45,6 @@ export default function Posts() {
         {usuarioImagem:"assets/img/meowed.svg", usuarioNome: "meowed", imagem:"assets/img/gato-telefone.svg", curtidoImagem:"assets/img/respondeai.svg", curtidoNome: "respondeai", curtidoNumero: "101.523"},
         {usuarioImagem:"assets/img/barked.svg", usuarioNome: "barked", imagem:"assets/img/dog.svg", curtidoImagem:"assets/img/adorable_animals.svg", curtidoNome: "adorable_animals", curtidoNumero: "99.159"}
     ]
-    console.log(conteudoPosts)
     return (
         <div class="posts">
             {conteudoPosts.map((p) =>( 

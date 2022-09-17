@@ -1,15 +1,27 @@
 import Sugestoes from "./Sugestoes"
 
-export default function SideBar() {
-    return (
-        <div class="sidebar">
-            <div class="usuario">
-                <img src="assets/img/catanacomics.svg" />
+function Usuario(props){
+    console.log(props)
+    return(
+        <div class="usuario">
+                <img src={props.imagem} />
                 <div class="texto">
-                    <strong>catanacomics</strong>
-                    Catana
+                    <strong>{props.username}</strong>
+                    {props.nome}
                 </div>
             </div>
+    )
+}
+
+export default function SideBar() {
+    const conteudoUsuario = [
+        "assets/img/catanacomics.svg",
+        "catanacomics",
+        "Catana"
+    ]
+    return (
+        <div class="sidebar">
+            <Usuario imagem={conteudoUsuario[0]} username={conteudoUsuario[1]} nome={conteudoUsuario[2]}/>            
 
             <Sugestoes></Sugestoes>
 
