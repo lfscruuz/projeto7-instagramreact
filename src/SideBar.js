@@ -1,27 +1,58 @@
+import React from "react"
 import Sugestoes from "./Sugestoes"
 
+
+
 function Usuario(props){
+    
     console.log(props)
     return(
         <div class="usuario">
-                <img src={props.imagem} />
+                <img src={props.imagem} onClick={props.funcaoFoto} />
                 <div class="texto">
                     <strong>{props.username}</strong>
+                    <div class="nome-e-icone">
                     {props.nome}
+                    <ion-icon class="icones" name="pencil-outline" onClick={props.funcaoNome}></ion-icon>
+                    </div>
                 </div>
             </div>
     )
 }
 
 export default function SideBar() {
-    const conteudoUsuario = [
-        "assets/img/catanacomics.svg",
-        "catanacomics",
-        "Catana"
+    const [nome, setNome] = React.useState('catanacomics')
+    const [usuario, setUsuario] = React.useState("Catana")
+    const [foto, setFoto] = React.useState("assets/img/catanacomics.svg")
+
+    function trocarNome(){
+        const nome = prompt('Qual é o seu nome?')
+        setNome(nome)
+        const usuario = prompt('Qual o seu nome de usuário?')
+        setUsuario(usuario)
+    }
+
+    function trocarFoto(){
+        const foto = prompt('Insira o link da sua nova foto')
+        setFoto(foto)
+    }
+    
+    let conteudoUsuario = [
+        {imagem:foto,
+        username:"catanacomics",
+        nome:nome,
+        funcaoNome:trocarNome,
+        funcaoFoto:trocarFoto
+    }
     ]
+
     return (
         <div class="sidebar">
-            <Usuario imagem={conteudoUsuario[0]} username={conteudoUsuario[1]} nome={conteudoUsuario[2]}/>            
+            <Usuario imagem={foto} 
+            username={usuario} 
+            nome={nome} 
+            funcaoNome={conteudoUsuario[0].funcaoNome} 
+            funcaoFoto={conteudoUsuario[0].funcaoFoto}/>            
 
             <Sugestoes></Sugestoes>
 

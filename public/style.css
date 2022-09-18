@@ -229,6 +229,10 @@ body {
   border-radius: 50%;
 }
 
+.sidebar > .usuario img:hover{
+  cursor: pointer;
+}
+
 .sidebar > .usuario .texto {
   display: flex;
   flex-direction: column;
@@ -308,6 +312,14 @@ body {
 
 .logo-mobile, .instagram-mobile {
   display: none !important;
+}
+
+.nome-e-icone .icones{
+  margin-left: 10px;
+}
+
+.nome-e-icone .icones:hover{
+  cursor: pointer;
 }
 
 @media (max-width: 935px) {
