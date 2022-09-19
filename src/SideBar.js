@@ -4,8 +4,6 @@ import Sugestoes from "./Sugestoes"
 
 
 function Usuario(props){
-    
-    console.log(props)
     return(
         <div class="usuario">
                 <img src={props.imagem} onClick={props.funcaoFoto} />

@@ -322,6 +322,10 @@ body {
   cursor: pointer;
 }
 
+.vermelho{
+  color: red;
+}
+
 @media (max-width: 935px) {
   .sidebar {
     display: none;
