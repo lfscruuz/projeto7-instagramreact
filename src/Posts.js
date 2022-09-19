@@ -18,21 +18,23 @@ function Post(props) {
             favorito.target.name = 'bookmark-outline';
             favorito.target.classList.remove('vermelho');
         }
-        
-    } 
+
+    }
 
     function curtir(curtida) {
         let condicao = '';
+        curtida = curtida.target.parentNode.parentNode
+        let coracao = curtida.querySelector('.coracao')
         if (curt == false) {
             condicao = true;
             setCurt(condicao);
-            curtida.target.name = 'heart';
-            curtida.target.classList.add('vermelho');
+            coracao.name = 'heart';
+            coracao.classList.add('vermelho');
         } else {
             condicao = false;
             setCurt(condicao);
-            curtida.target.name = 'heart-outline';
-            curtida.target.classList.remove('vermelho');
+            coracao.name = 'heart-outline';
+            coracao.classList.remove('vermelho');
         }
 
     }
@@ -50,13 +52,13 @@ function Post(props) {
             </div>
 
             <div class="conteudo">
-                <img src={props.imagem} />
+                <img src={props.imagem} onClick={curtir} />
             </div>
 
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon name="heart-outline" onClick={curtir}></ion-icon>
+                        <ion-icon class="coracao" name="heart-outline" onClick={curtir}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
