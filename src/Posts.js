@@ -92,7 +92,7 @@ export default function Posts() {
     ];
 
     return (
-        <div class="posts">;
+        <div class="posts">
             {conteudoPosts.map((p) => (
                 <Post usuarioImagem={p.usuarioImagem}
                     usuarioNome={p.usuarioImagem}

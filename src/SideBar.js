@@ -8,9 +8,9 @@ function Usuario(props){
         <div class="usuario">
                 <img src={props.imagem} onClick={props.funcaoFoto} />
                 <div class="texto">
-                    <strong>{props.username}</strong>
+                    <strong>{props.nome}</strong>
                     <div class="nome-e-icone">
-                    {props.nome}
+                    {props.username}
                     <ion-icon class="icones" name="pencil-outline" onClick={props.funcaoNome}></ion-icon>
                     </div>
                 </div>
@@ -19,8 +19,8 @@ function Usuario(props){
 }
 
 export default function SideBar() {
-    const [nome, setNome] = React.useState('catanacomics')
-    const [usuario, setUsuario] = React.useState("Catana")
+    const [nome, setNome] = React.useState("catana")
+    const [usuario, setUsuario] = React.useState("catanacomics")
     const [foto, setFoto] = React.useState("assets/img/catanacomics.svg")
 
     function trocarNome(){
@@ -37,7 +37,7 @@ export default function SideBar() {
     
     let conteudoUsuario = [
         {imagem:foto,
-        username:"catanacomics",
+        username:usuario,
         nome:nome,
         funcaoNome:trocarNome,
         funcaoFoto:trocarFoto
